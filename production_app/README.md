@@ -35,6 +35,18 @@ Simply double-click the `run_windows.bat` file.
 - Installs all dependencies from `requirements.txt`.
 - Launches the server and dashboard immediately.
 
+### Or else
+Download the production app folder
+and open cmd = and follow this :
+- type "cd_file path" and press enter.
+- And use this prompt:
+- :: Activate virtual environment
+venv\Scripts\activate
+
+:: Run the server
+python -m uvicorn main:app --host 127.0.0.1 --port 8005
+- And press enter and host the server in local.
+
 ### 3. Viewing the Presentation
 Open the interactive landing page at: **http://127.0.0.1:8005**
 
