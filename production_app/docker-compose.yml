@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  emotion-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: emotion-engine
+    ports:
+      - "8005:8005"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8005
+      - WORKERS=4
+      - LOG_LEVEL=info
+      - DEVICE_TYPE=auto
+      - CORS_ORIGINS=*
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - emotion-network
+
+  # Optional: Nginx reverse proxy for SSL/TLS and better performance
+  nginx:
+    image: nginx:latest
+    container_name: emotion-engine-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - emotion-engine
+    restart: unless-stopped
+    networks:
+      - emotion-network
+    profiles:
+      - proxy  # Run with: docker-compose --profile proxy up
+
+networks:
+  emotion-network:
+    driver: bridge
+
+volumes:
+  models:
+  logs:
