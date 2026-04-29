@@ -66,14 +66,27 @@ Open the interactive landing page at: **http://127.0.0.1:8005**
 
 #### 🎞️ Project Preview
 
+
 1. #### Dashboard
+
+
 <img width="1919" height="929" alt="Screenshot 2026-04-29 151817" src="https://github.com/user-attachments/assets/c634b0b3-311d-414c-ba7a-bd9bbccff3d7" />
 
+
 2. #### Live Capturing
+
+
 <img width="1919" height="928" alt="Screenshot 2026-04-29 151840" src="https://github.com/user-attachments/assets/6ec0d9c9-5174-4050-bb12-9b6dfb4aac13" />
 
+
 3. #### Uploading Media Preview
+
+
 <img width="1919" height="931" alt="Screenshot 2026-04-29 151857" src="https://github.com/user-attachments/assets/52b05344-f9bd-430d-8886-38f74376b0b1" />
 
+
 4. #### Dashboard For Presentation
+
+
 <img width="1919" height="929" alt="Screenshot 2026-04-29 151924" src="https://github.com/user-attachments/assets/090ecbdc-e7c0-4100-ac38-f018d435060c" />
+
