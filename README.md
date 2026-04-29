@@ -30,6 +30,12 @@ python3 -m uvicorn main:app --port 8005 --reload
 ```
 
 #### 💻 Windows (One-Click)
+
+Just simply click on the link provided in the Description of this repository.
+Mentioned like this "https://huggingface.co/spaces/Niranjan-ninja/Emotion-engine"
+
+#### 🗺️ Other Methods
+
 Simply double-click the `run_windows.bat` file. 
 - It will automatically create a virtual environment (`venv`).
 - Installs all dependencies from `requirements.txt`.
